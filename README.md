@@ -20,7 +20,7 @@
 2. En el fork: cloná el repositorio con
 
 ```bash
-git clone https://github.com/<USUARIO>/<NOMBRE-DEL-REPO>.git
+git clone https://github.com/<USUARIO>/<NOMBRE-DEL-REPO>.git o copiando la direccion HTTPS en <> CODE luego de realizar el FORK
 cd <NOMBRE-DEL-REPO>
 code .
 ```
