@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reporte de sesión</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site">
+      <a class="brand" href="index.html">Taller de <span>testing exploratorio</span></a>
+      <nav>
+        <a href="index.html">Inicio</a><a id="lnkTienda" href="tienda.html" target="_blank">Abrir la tienda ↗</a>
+      </nav>
+    </header>
+    <main>
+      <h1 id="titulo">Reporte de sesión</h1>
+
+      <div class="card">
+        <h2>Misión</h2>
+        <p id="mision"></p>
+        <p class="muted" id="pista"></p>
+      </div>
+
+      <div class="card">
+        <h2>Datos de la sesión</h2>
+        <label for="tester">Tester(s)</label><input id="tester" placeholder="Nombres de los integrantes del grupo" />
+        <h3>Áreas</h3>
+        <div class="row">
+          <div><label for="os">Sistema operativo</label><input id="os" placeholder="Ej: Windows 11" /></div>
+          <div>
+            <label for="dispositivo">Dispositivo</label><input id="dispositivo" placeholder="Ej: notebook, celular" />
+          </div>
+          <div><label for="navegador">Navegador</label><input id="navegador" placeholder="Ej: Chrome" /></div>
+        </div>
+        <div class="row">
+          <div><label for="rol">Rol</label><input id="rol" value="Cliente de la tienda" /></div>
+          <div><label for="funcionalidad">Funcionalidad</label><input id="funcionalidad" readonly /></div>
+          <div>
+            <label for="estrategia">Estrategia</label><input id="estrategia" value="Testing exploratorio" readonly />
+          </div>
+        </div>
+        <h3>Inicio y fin</h3>
+        <div class="row" style="align-items: flex-end">
+          <div><label for="fecha">Fecha</label><input id="fecha" type="date" /></div>
+          <div><label for="inicio">Hora de inicio</label><input id="inicio" type="time" /></div>
+          <div><label for="fin">Hora de fin</label><input id="fin" type="time" /></div>
+          <div>
+            <label>Duración</label>
+            <div><span id="duracion"></span> min</div>
+          </div>
+        </div>
+        <div class="row no-print" style="align-items: center; margin-top: 14px">
+          <div style="flex: 0 0 auto">
+            <button id="btnEmpezar">Empezar sesión</button>
+            <button id="btnTerminar" class="secondary">Terminar sesión</button>
+          </div>
+          <div class="timer" id="timer"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Notas de pruebas</h2>
+        <p class="muted">Enunciados cortos de lo que probaron. Ej: "Registrarse con edad 17".</p>
+        <textarea id="notas" style="min-height: 140px"></textarea>
+        <h3>Archivo de datos</h3>
+        <p class="muted">Datos que usaron para probar (correos, cupones, cantidades, etc.).</p>
+        <textarea id="datos"></textarea>
+        <h3>Otras notas</h3>
+        <p class="muted">Pensamientos, aprendizajes, dudas y oportunidades.</p>
+        <textarea id="otras"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>Incidentes <span class="muted" id="cantInc"></span></h2>
+        <p class="muted">Un incidente por cada error encontrado, con el mayor detalle posible.</p>
+        <div id="incidentes"></div>
+        <button class="secondary no-print" id="btnAgregarInc">+ Agregar incidente</button>
+      </div>
+
+      <div class="card">
+        <h2>Riesgos</h2>
+        <p class="muted">¿Qué podría pasar si esta sesión no se hubiera hecho?</p>
+        <textarea id="riesgos"></textarea>
+        <h2>Inconvenientes</h2>
+        <p class="muted">Lo que dificultó la sesión (se cortó internet, no entendimos algo, etc.).</p>
+        <textarea id="inconvenientes"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>Métricas</h2>
+        <h3>División de tareas</h3>
+        <div class="row">
+          <div>
+            <label for="mConf">Armado de la sesión (%)</label><input id="mConf" type="number" min="0" max="100" />
+          </div>
+          <div>
+            <label for="mDis">Diseño y ejecución de pruebas (%)</label
+            ><input id="mDis" type="number" min="0" max="100" />
+          </div>
+          <div>
+            <label for="mRep">Reporte e investigación de defectos (%)</label
+            ><input id="mRep" type="number" min="0" max="100" />
+          </div>
+        </div>
+        <p id="sumaTareas"></p>
+        <h3>Misión vs. oportunidad</h3>
+        <div class="row">
+          <div>
+            <label for="mMis">Tiempo en la misión (%)</label><input id="mMis" type="number" min="0" max="100" />
+          </div>
+          <div>
+            <label for="mOpo">Tiempo en oportunidades (%)</label><input id="mOpo" type="number" min="0" max="100" />
+          </div>
+        </div>
+        <p id="sumaMision"></p>
+      </div>
+
+      <div class="toolbar">
+        <button id="btnDescargar">Descargar reporte (.md)</button>
+        <button class="secondary" id="btnImprimir">Imprimir o guardar como PDF</button>
+        <button class="danger" id="btnBorrar">Borrar reporte</button>
+        <span class="muted" id="guardado" style="align-self: center"></span>
+      </div>
+    </main>
+    <script type="module" src="./js/reporte.js"></script>
+  </body>
+</html>
